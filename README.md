@@ -17,18 +17,18 @@ Empty State: Displays a motivational message and icon when no tasks are present.
 Screenshots
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/adf9c3ad-dc85-41d5-9acb-7c9555789588" width="45%" />
-  <img src="https://github.com/user-attachments/assets/a311cda9-0041-45d3-8860-01b417580923" width="45%" />
+  <img src="https://github.com/user-attachments/assets/adf9c3ad-dc85-41d5-9acb-7c9555789588" width="30%" />
+  <img src="https://github.com/user-attachments/assets/a311cda9-0041-45d3-8860-01b417580923" width="30%" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/04e40d09-abe8-4e72-8fba-16cc351d9da0" width="45%" />
-  <img src="https://github.com/user-attachments/assets/ec81751c-73af-42b6-986d-e537da440b56" width="45%" />
+  <img src="https://github.com/user-attachments/assets/04e40d09-abe8-4e72-8fba-16cc351d9da0" width="30%" />
+  <img src="https://github.com/user-attachments/assets/ec81751c-73af-42b6-986d-e537da440b56" width="30%" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7e3777b0-3677-4f60-8e37-16f16f8a9c11" width="45%" />
-  <img src="https://github.com/user-attachments/assets/8841e841-c3aa-47b1-8ad1-8e1ae9249e3e" width="45%" />
+  <img src="https://github.com/user-attachments/assets/7e3777b0-3677-4f60-8e37-16f16f8a9c11" width="30%" />
+  <img src="https://github.com/user-attachments/assets/8841e841-c3aa-47b1-8ad1-8e1ae9249e3e" width="30%" />
 </p>
 
 # Getting Started
