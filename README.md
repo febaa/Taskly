@@ -16,15 +16,20 @@ Empty State: Displays a motivational message and icon when no tasks are present.
 
 Screenshots
 
-![Screenshot_1749406680](https://github.com/user-attachments/assets/adf9c3ad-dc85-41d5-9acb-7c9555789588)
-![Screenshot_1749406674](https://github.com/user-attachments/assets/a311cda9-0041-45d3-8860-01b417580923)
-![Screenshot_1749406670](https://github.com/user-attachments/assets/04e40d09-abe8-4e72-8fba-16cc351d9da0)
-![Screenshot_1749406665](https://github.com/user-attachments/assets/ec81751c-73af-42b6-986d-e537da440b56)
-![Screenshot_1749406662](https://github.com/user-attachments/assets/7e3777b0-3677-4f60-8e37-16f16f8a9c11)
-![Screenshot_1749406658](https://github.com/user-attachments/assets/8841e841-c3aa-47b1-8ad1-8e1ae9249e3e)
-![Screenshot_1749406643](https://github.com/user-attachments/assets/342ab614-5b20-48fe-ab43-ac0b0807c72d)
-![Screenshot_1749406638](https://github.com/user-attachments/assets/104b7147-cebb-416e-a85f-ac7619c56032)
-![Screenshot_1749405959](https://github.com/user-attachments/assets/1a72e108-c9c7-40d1-bc91-dd4b7811da5f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/adf9c3ad-dc85-41d5-9acb-7c9555789588" width="45%" />
+  <img src="https://github.com/user-attachments/assets/a311cda9-0041-45d3-8860-01b417580923" width="45%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/04e40d09-abe8-4e72-8fba-16cc351d9da0" width="45%" />
+  <img src="https://github.com/user-attachments/assets/ec81751c-73af-42b6-986d-e537da440b56" width="45%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7e3777b0-3677-4f60-8e37-16f16f8a9c11" width="45%" />
+  <img src="https://github.com/user-attachments/assets/8841e841-c3aa-47b1-8ad1-8e1ae9249e3e" width="45%" />
+</p>
 
 # Getting Started
 
