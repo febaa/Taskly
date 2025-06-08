@@ -58,23 +58,6 @@ google_fonts: For Poppins typography.
 font_awesome_flutter: For professional icons.
 
 See pubspec.yaml for the complete list.
-Project Structure
-task-manager-app/
-├── lib/
-│   ├── bloc/
-│   │   ├── task_bloc.dart
-│   │   ├── task_event.dart
-│   │   ├── task_state.dart
-│   │   ├── theme_bloc.dart
-│   │   ├── theme_event.dart
-│   │   ├── theme_state.dart
-│   ├── models/
-│   │   ├── task.dart
-│   ├── screens/
-│   │   ├── home_screen.dart
-│   ├── main.dart
-├── pubspec.yaml
-├── README.md
 
 Usage
 
