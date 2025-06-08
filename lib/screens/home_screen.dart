@@ -19,13 +19,16 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   void _showAddTaskDialog(BuildContext context) {
     final textController = TextEditingController();
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     showDialog(
       context: context,
       builder: (context) => Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         elevation: 8,
         child: Container(
-          padding: const EdgeInsets.all(20),
+          width: screenWidth * 0.85, // Dialog width 85% of screen
+          padding: EdgeInsets.all(screenWidth * 0.05), // Responsive padding
           decoration: BoxDecoration(
             color: Theme.of(context).dialogTheme.backgroundColor,
             borderRadius: BorderRadius.circular(12),
@@ -36,12 +39,12 @@ class HomeScreenState extends State<HomeScreen> {
               Text(
                 'Add New Task',
                 style: GoogleFonts.poppins(
-                  fontSize: 18,
+                  fontSize: screenWidth * 0.045, // 18px base, scaled
                   fontWeight: FontWeight.w600,
                   color: Theme.of(context).textTheme.bodyLarge!.color,
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: screenHeight * 0.02), // Responsive spacing
               TextField(
                 controller: textController,
                 decoration: InputDecoration(
@@ -54,10 +57,12 @@ class HomeScreenState extends State<HomeScreen> {
                   prefixIcon: Icon(
                     FontAwesomeIcons.tasks,
                     color: Theme.of(context).colorScheme.secondary,
+                    size: screenWidth * 0.05, // Responsive icon size
                   ),
                 ),
+                style: GoogleFonts.poppins(fontSize: screenWidth * 0.04), // Responsive text
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.025),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -67,6 +72,7 @@ class HomeScreenState extends State<HomeScreen> {
                       'Cancel',
                       style: GoogleFonts.poppins(
                         color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.6),
+                        fontSize: screenWidth * 0.035, // Responsive text
                       ),
                     ),
                   ),
@@ -83,13 +89,17 @@ class HomeScreenState extends State<HomeScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * 0.05,
+                        vertical: screenHeight * 0.015,
+                      ),
                     ),
                     child: Text(
                       'Add Task',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w600,
                         color: Colors.teal[900],
+                        fontSize: screenWidth * 0.035,
                       ),
                     ),
                   ),
@@ -98,11 +108,13 @@ class HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-      ).animate().scale(duration: 300.ms, curve: Curves.easeInOut).fadeIn()
+      ).animate().scale(duration: 300.ms, curve: Curves.easeInOut).fadeIn(),
     );
   }
 
   void _showDeleteTaskDialog(BuildContext context, String taskId) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -113,11 +125,12 @@ class HomeScreenState extends State<HomeScreen> {
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w600,
             color: Theme.of(context).textTheme.bodyLarge!.color,
+            fontSize: screenWidth * 0.045, // Responsive title
           ),
         ),
         content: Text(
           'Are you sure you want to delete this task?',
-          style: GoogleFonts.poppins(),
+          style: GoogleFonts.poppins(fontSize: screenWidth * 0.04), // Responsive content
         ),
         actions: [
           TextButton(
@@ -126,6 +139,7 @@ class HomeScreenState extends State<HomeScreen> {
               'Cancel',
               style: GoogleFonts.poppins(
                 color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.6),
+                fontSize: screenWidth * 0.035,
               ),
             ),
           ),
@@ -140,21 +154,28 @@ class HomeScreenState extends State<HomeScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth * 0.04,
+                vertical: screenHeight * 0.01,
+              ),
             ),
             child: Text(
               'Delete',
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
+                fontSize: screenWidth * 0.035,
               ),
             ),
           ),
         ],
-      ).animate().fadeIn(duration: 300.ms, curve: Curves.easeInOut)
+      ).animate().fadeIn(duration: 300.ms, curve: Curves.easeInOut),
     );
   }
 
   void _showToggleTaskDialog(BuildContext context, String taskId, bool isCompleted) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -165,13 +186,14 @@ class HomeScreenState extends State<HomeScreen> {
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w600,
             color: Theme.of(context).textTheme.bodyLarge!.color,
+            fontSize: screenWidth * 0.045,
           ),
         ),
         content: Text(
           isCompleted
               ? 'Do you want to mark this task as incomplete?'
               : 'Do you want to mark this task as completed?',
-          style: GoogleFonts.poppins(),
+          style: GoogleFonts.poppins(fontSize: screenWidth * 0.04),
         ),
         actions: [
           TextButton(
@@ -180,6 +202,7 @@ class HomeScreenState extends State<HomeScreen> {
               'Cancel',
               style: GoogleFonts.poppins(
                 color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.6),
+                fontSize: screenWidth * 0.035,
               ),
             ),
           ),
@@ -195,46 +218,53 @@ class HomeScreenState extends State<HomeScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth * 0.04,
+                vertical: screenHeight * 0.01,
+              ),
             ),
             child: Text(
               'Confirm',
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
                 color: Colors.teal[900],
+                fontSize: screenWidth * 0.035,
               ),
             ),
           ),
         ],
-      ).animate().scale(duration: 300.ms, curve: Curves.easeInOut)
+      ).animate().scale(duration: 300.ms, curve: Curves.easeInOut),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200,
+            expandedHeight: screenHeight * 0.25, // Responsive height (25% of screen)
             floating: false,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
-              titlePadding: const EdgeInsets.only(bottom: 16),
+              titlePadding: EdgeInsets.only(bottom: screenHeight * 0.02),
               title: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    FontAwesomeIcons.clipboardList, // task/note style icon
+                    FontAwesomeIcons.clipboardList,
                     color: Colors.white,
-                    size: 20,
+                    size: screenWidth * 0.05, // Responsive icon size
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: screenHeight * 0.01),
                   Text(
-                    'Memo',
-                    style: GoogleFonts.poppins(
+                    'Taskly',
+                    style: GoogleFonts.orbitron(
                       fontWeight: FontWeight.w600,
-                      fontSize: 24,
+                      fontSize: screenWidth * 0.06, // Responsive title (24px base)
                       letterSpacing: 1.1,
                       color: Colors.white,
                     ),
@@ -258,9 +288,10 @@ class HomeScreenState extends State<HomeScreen> {
               IconButton(
                 icon: Icon(
                   Theme.of(context).colorScheme.brightness == Brightness.light
-                      ? FontAwesomeIcons.sun
-                      : FontAwesomeIcons.moon,
+                      ? FontAwesomeIcons.moon
+                      : FontAwesomeIcons.sun,
                   color: Colors.white,
+                  size: screenWidth * 0.06, // Responsive icon size
                 ),
                 onPressed: () => context.read<ThemeBloc>().add(ToggleTheme()),
               ),
@@ -271,27 +302,30 @@ class HomeScreenState extends State<HomeScreen> {
               builder: (context, state) {
                 if (state is TaskInitial) {
                   context.read<TaskBloc>().add(LoadTasks());
-                  return const SizedBox(
-                    height: 400,
-                    child: Center(child: CircularProgressIndicator()),
+                  return SizedBox(
+                    height: screenHeight * 0.5,
+                    child: const Center(child: CircularProgressIndicator()),
                   );
                 } else if (state is TaskLoadSuccess) {
                   if (state.tasks.isEmpty) {
                     return SizedBox(
-                      height: MediaQuery.of(context).size.height - 300,
+                      height: screenHeight * 0.4,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
-                            FontAwesomeIcons.tasks,
-                            size: 80,
-                            color: Theme.of(context).colorScheme.secondary.withOpacity(0.6),
-                          ).animate().fadeIn(duration: 600.ms).scale(),
-                          const SizedBox(height: 16),
+                          FontAwesomeIcons.tasks,
+                          size: screenWidth * 0.2,
+                          color: Theme.of(context).colorScheme.secondary.withOpacity(0.6),
+                        )
+                        .animate()
+                        .scale(duration: 600.ms, curve: Curves.easeInOut)
+                        .fadeIn(),
+                          SizedBox(height: screenHeight * 0.02),
                           Text(
-                            'No tasks yet, add some to get started!',
+                            'No tasks yet',
                             style: GoogleFonts.poppins(
-                              fontSize: 18,
+                              fontSize: screenWidth * 0.045, // Responsive text
                               fontWeight: FontWeight.w500,
                               color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.6),
                             ),
@@ -304,13 +338,13 @@ class HomeScreenState extends State<HomeScreen> {
                   return ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    padding: const EdgeInsets.all(16),
+                    padding: EdgeInsets.all(screenWidth * 0.04), // Responsive padding
                     itemCount: state.tasks.length,
                     itemBuilder: (context, index) {
                       final task = state.tasks[index];
                       return Card(
                         key: ValueKey(task.id),
-                        margin: const EdgeInsets.symmetric(vertical: 6),
+                        margin: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
                         child: ListTile(
                           leading: Checkbox(
                             value: task.isCompleted,
@@ -320,24 +354,26 @@ class HomeScreenState extends State<HomeScreen> {
                                 setState(() {}); // Force UI refresh
                               }
                             },
-                            activeColor: Theme.of(context).colorScheme.primary,
+                            activeColor: Colors.green,
                             checkColor: Colors.white,
-                          ).animate().fade(duration: 200.ms),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                          ).animate().fade(duration: const Duration(milliseconds: 200)),
                           title: Text(
                             task.title,
                             style: GoogleFonts.poppins(
-                              fontSize: 16,
+                              fontSize: screenWidth * 0.04, // ~16px on 400px screen
                               fontWeight: FontWeight.w500,
                               decoration: task.isCompleted ? TextDecoration.lineThrough : null,
-                              color: task.isCompleted
-                                  ? Theme.of(context).colorScheme.secondary
-                                  : Theme.of(context).textTheme.bodyLarge!.color,
+                              color: Theme.of(context).colorScheme.brightness == Brightness.light ? Colors.black : Colors.white
                             ),
                           ),
                           trailing: IconButton(
-                            icon: const Icon(
+                            icon: Icon(
                               FontAwesomeIcons.trash,
                               color: Colors.redAccent,
+                              size: screenWidth * 0.05, // Responsive icon
                             ),
                             onPressed: () => _showDeleteTaskDialog(context, task.id),
                           ),
@@ -352,9 +388,14 @@ class HomeScreenState extends State<HomeScreen> {
                     },
                   );
                 }
-                return const SizedBox(
-                  height: 400,
-                  child: Center(child: Text('No tasks available')),
+                return SizedBox(
+                  height: screenHeight * 0.5,
+                  child: Center(
+                    child: Text(
+                      'No tasks available',
+                      style: GoogleFonts.poppins(fontSize: screenWidth * 0.04),
+                    ),
+                  ),
                 );
               },
             ),
@@ -363,7 +404,13 @@ class HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showAddTaskDialog(context),
-        child: const Icon(FontAwesomeIcons.plus, size: 28),
+        child: Icon(
+          FontAwesomeIcons.plus,
+          size: screenWidth * 0.06, // Responsive icon size
+        ),
+        backgroundColor: Colors.teal[600],
+        foregroundColor: Colors.white,
+        shape: CircleBorder(),
       ).animate().scale(duration: 300.ms, curve: Curves.easeInOut),
     );
   }
